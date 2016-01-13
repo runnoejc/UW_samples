@@ -5,9 +5,6 @@
 #-----
 This directory contains an IDL code that I am currently working on.  I am conducting an observational search for supermassive black hole binaries.  As the main test, I make an analogy to single-line spectroscopic binary stars and look for radial velocity shifts in the broad Hb line of quasars.  I typically have a handful of points spanning a small fraction of the period of the hypothetical binaries.  The measurements are made relative to an anchor point, the first observation.  The simulation that I include is designed to identify the shortest period for a sinusoid that is consistent with the data, which can help put limits on the mass of the binary.  The simulation is necessary for a fair treatment of the uncertainties.  This code is under construction, with the primary improvement being a better exploration of parameter space.   
 
-# python/
-#-----
-
 # cpp/
 #-----
 This directory contains exercises written in C++ from Math 167 course taught at Whitman College in the spring of 2007.
