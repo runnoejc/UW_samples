@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+class lucas {
+private:
+  int i0,i1,current_value,previous_value,current_index;
+public:
+  lucas ();
+  lucas (int, int);
+  void initialize (int, int);
+  void reset ();
+  int current ();
+  int next ();
+  int term (int);
+};
+
+
+main () {
+}
+

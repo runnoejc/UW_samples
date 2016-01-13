@@ -1,0 +1,31 @@
+// Matt Pearson & Jessie Runnoe
+// Assignment 7
+#define M 100
+#define NOT_FOUND -1
+#define DEFAULT_CAPACITY 10
+class data_set {
+private:
+  // Declares pointers to arrays D and aux
+	int *D,*aux;
+  // Declares class variables and private functions
+	int num_items, capacity;
+	int prev_term, prev_index;
+	void merge (int, int);
+	void mergesort (int,int);
+public:
+	data_set ();
+	data_set (const data_set &);
+	~data_set ();
+	void add_item(int);
+	void get_array ();
+	int get_data_item(int);
+	int get_item (int, int&);
+	void sort ();
+	int find (int);
+	data_set & operator += (const data_set & rhs);
+	data_set &  operator = (const data_set & rhs);
+};
+	data_set operator + (const data_set & lhs, const data_set & rhs);
+	istream & operator >> (istream & istr, data_set & rhs);
+	ostream & operator << (ostream & ostr, data_set & rhs);
+

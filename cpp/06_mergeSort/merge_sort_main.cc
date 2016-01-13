@@ -1,0 +1,73 @@
+// Matt Pearson & Jessie Runnoe
+// Assignment 6
+
+// Take filename from user, read
+// in file, and search for user
+// input numbers in the file.
+
+#include <fstream>
+#include <iostream>
+#include "merge_class.h"
+#define FILENAME_LENGTH 1024
+
+using namespace std;
+string garbage;
+
+void sortDataSet() {
+
+}
+
+main () {
+  int dat,j, capacity, t, pos, term;
+  char filename[FILENAME_LENGTH];
+  data_set D;
+  ifstream datafile;
+
+  cerr << "Data file? ";
+  cin >> filename;
+  datafile.open(filename);
+  while (datafile >> dat) {
+	D.add_data_item (dat);
+  }
+  datafile.close();
+
+  char opt;
+  while (opt != 'q' || opt != 'Q') {
+	// Display list of available options
+	cout << endl << "Options: " << endl
+		<< "[t] Search for a term" << endl
+		<< "[q] Quit this program" << endl
+		<< endl
+		<< "Choose an option: ";
+
+	cin >> opt;
+
+	switch (opt) {
+		case 't':
+		case 'T':
+			// Sort array and search for inputted term
+	  		D.sort();
+			cerr << "Choose a number: ";
+			while (cin >> term) {
+				pos = D.find(term);
+				if (pos >= 0 ) {
+					cout << "Term " << term << " is in position " << pos << endl;
+				}
+				else { 
+					cerr << " Term Not Found " << endl; 
+				}
+				cerr << "Choose a number: ";
+			}	
+			cin.clear();
+			getline (cin, garbage);
+			break;
+		case 'a':
+		case 'A':
+			// Add a term to the array
+			break;
+		case 'q':
+		case 'Q':
+			return 0;
+	}
+  }	
+}

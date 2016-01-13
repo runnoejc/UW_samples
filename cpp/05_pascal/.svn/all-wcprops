@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/cplusplus/!svn/ver/52/05_pascal
+END
+pascal_main.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/cplusplus/!svn/ver/51/05_pascal/pascal_main.cc
+END
+pascal_class.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/cplusplus/!svn/ver/52/05_pascal/pascal_class.cc
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/cplusplus/!svn/ver/27/05_pascal/makefile
+END
+pascal_class.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/cplusplus/!svn/ver/50/05_pascal/pascal_class.h
+END

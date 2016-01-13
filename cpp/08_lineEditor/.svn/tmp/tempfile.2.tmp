@@ -1,0 +1,83 @@
+// Matt Pearson & Jessie Runnoe
+// Assignment 8 - Line Editor
+#include <iostream>
+#include <fstream>
+#include "text_class.h"
+
+using namespace std;
+string garbage;
+
+main () {
+	cerr << "|--> ";
+
+	char command_line [100];	
+	// Suck in the command-line
+<<<<<<< .mine
+	cin.getline(command_line, 100);
+	
+=======
+	cin.getline(command_line,100);
+
+>>>>>>> .r101
+	// Skip unneeded spaces
+	int p=0;
+	while (command_line[p]==' ') { p++; }
+	char command = command_line [p]; p++;
+	
+	// Do different things based on the command parsed above
+	switch (command) {
+		// Show the "help" information 
+		case 'h':
+			cerr << "this is the help message" << endl;
+		// Get a file
+		// Usage: g <filename-required>
+		case 'g':
+
+		// Toggle line-numbering
+		case 'n':
+
+		// Quit without saving
+		case 'q':
+
+		// Save file and exit
+		// Usage: x <filename-optional>
+		case 'x':
+
+		// Save file (a.k.a put current buffer to file)
+		// Usage: p <filename-optional>
+		case 'p':
+
+		// Add lines after line N
+		// Usage: a N
+		case 'a':
+
+		// Display lines M through N on the screen
+		// Usage: t M N
+		case 't':
+
+		// Delete lines M through N
+		// Will delete only M if not specified N
+		// Usage: d M N
+		case 'd':
+
+		// Move lines M through N to location after line L
+		// Usage: m M N L
+		case 'm':
+
+		// COPY lines M through N to location after line L
+		// Usage: c M N L
+		case 'c':
+
+		// Display each line between M and N on which 'word' appears
+		// Usage: f M N /word/
+		case 'f':
+
+		// Substitute string 'new' for the first occurrence of string 'old' on each of
+		// lines M through N.
+		// Usage: s M N /old/new/
+		case 's':
+
+		default:
+			return 0;
+	}
+}

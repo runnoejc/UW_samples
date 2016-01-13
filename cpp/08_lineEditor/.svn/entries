@@ -1,0 +1,80 @@
+8
+
+dir
+118
+http://stash.pearsonoid.com/cplusplus/08_lineEditor
+http://stash.pearsonoid.com/cplusplus
+
+
+
+2007-04-20T21:26:53.273176Z
+118
+runnoejc
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d46f5eff-b229-0410-8ffb-f32543b35510
+
+text_class.h
+file
+
+
+
+
+2007-04-20T21:25:37.000000Z
+d2d9f9314b5df62056ec40579087fc78
+2007-04-20T21:26:53.273176Z
+118
+runnoejc
+
+demo
+dir
+
+text_main.cc
+file
+
+
+
+
+2007-04-20T21:25:37.000000Z
+e347a33a9d819cf1cf089bd03ffe47d3
+2007-04-20T21:26:53.273176Z
+118
+runnoejc
+
+makefile
+file
+
+
+
+
+2007-04-13T22:29:05.000000Z
+9be8c716b9a7360bae77acca0e65b74c
+2007-04-03T04:36:54.798608Z
+95
+pearsoma
+has-props
+
+text_class.cc
+file
+
+
+
+
+2007-04-20T21:25:37.000000Z
+1a4ace6521d76ac3b47f3cd74ee1ea19
+2007-04-20T21:26:53.273176Z
+118
+runnoejc
+
