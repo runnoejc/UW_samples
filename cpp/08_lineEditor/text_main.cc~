@@ -1,0 +1,209 @@
+// Matt Pearson & Jessie Runnoe
+// Assignment 8 - Line Editor
+
+#include <string.h>
+#include <iostream>
+#include <fstream>
+#include "text_class.h"
+
+using namespace std;
+string garbage;
+
+#define CAPACITY 100
+#define COMMAND_CAPACITY 100
+#define COMMAND_PROMPT "|-->  "
+
+void display_help() {
+	cerr << endl << "== AVAILABLE COMMANDS ==" << endl << endl
+		<< " h -- Shows this screen." << endl
+		<< " g -- Opens a file." << endl
+		<< "      Usage:  g <filename> -- Filename is required." << endl
+		<< " n -- Toggles line-numbering" << endl
+		<< " q -- Exit program without saving." << endl
+		<< " x -- Save current file and exit program." << endl
+		<< "       Usage:  x <filename> -- Filename is optional." << endl
+		<< " p -- Save file." << endl
+		<< "       Usage: p <filename> -- Filename is optional." << endl
+		<< " a -- Add lines after line 'N'." << endl
+		<< "       Usage: a N" << endl
+		<< " t -- Display lines M through N." << endl
+		<< "       Usage: t M N" << endl
+		<< " d -- Delete lines M through N." << endl
+		<< "       Usage: d M N -- Only line M will be deleted if N is unspecified." << endl
+		<< " m -- Move lines M through N to directly after line L." << endl
+		<< "       Usage: m M N L" << endl
+		<< " c -- Copy lines M through N to location directly after line L." << endl
+		<< "       Usage: c M N L" << endl
+		<< " f -- Display each line between M and N on which 'word' appears." << endl
+		<< "       Usage: f M N /word/" << endl
+		<< " s -- Substitute string 'new' for the first occurrence of string 'old' on each of lines M through N." << endl
+		<< "       Usage: s M N /old/new/" << endl
+		<< endl;
+	return;
+}
+
+main () {
+	text_ed T;
+	char command_line [COMMAND_CAPACITY], command;
+	
+	while (command != 'q') {
+		cerr << COMMAND_PROMPT;
+		cin.getline(command_line,COMMAND_CAPACITY);
+		
+		// Skip unneeded spaces
+		int p=0;
+		while (command_line[p]==' ') { p++; }
+		command = command_line [p]; p++;
+		
+		switch (command) {
+			case 'h':
+				display_help();
+				break;
+
+			// Get a file
+			// Usage: g <filename-required>
+			case 'g':
+				char *file;
+				int i;
+				file = new char [CAPACITY];
+				while (command_line [p] == ' ') {p++;}
+				for ( i = 0; command_line [p] != '\0'; i++) {
+					 file [i] = command_line [p];
+					 p++;
+				}
+				file [i] = '\0';
+				T.load_file (file);
+				break;
+				
+			case 'n':		// Toggle line-numbering
+				T.toggle_lineNumbering();
+				cerr << endl << "Line numbering is now set to " << T.get_lineNumbering() << endl << endl;
+				break;
+				
+			case 'q':		// Quit without saving
+				cerr << endl << "Program has quit.  Any unsaved changes have been lost." << endl;
+				return 0;
+				
+			// Save file and exit
+			// Usage: x <filename-optional>
+			case 'x':
+				char *savex;
+				int k;
+				savex = new char [CAPACITY];
+				while ( command_line [p] == ' ' ) {p++;}
+				if ( command_line [p] == '\0' ) {
+				  T.save_file();
+				} else {
+				  for ( k = 0; command_line [p] != '\0'; k++ ) {
+					savex [k] = command_line [p];
+					p++;
+				  }
+				  savex [k] = '\0';
+				  T.save_file (savex);
+				}
+				cerr << endl << "Program has quit.  Changes to " << file << " have been saved." << endl;
+				return 0;
+				
+			// Save file (a.k.a put current buffer to file)
+			// Usage: p <filename-optional>
+			case 'p':
+				char *saveas;
+				int j;
+				saveas = new char [CAPACITY];
+				while ( command_line[p] == ' ' ) {p++;}
+				if ( command_line [p] == '\0' ) {
+				  T.save_file();
+				} else {
+					for ( j = 0; command_line [p] != '\0'; j++ ) {
+					saveas [j] = command_line [p];
+					p++;
+				  }
+				  saveas [j] = '\0';
+				  T.save_file (saveas);
+				}
+				break;
+				
+			// Add lines after line N
+			// Usage: a N
+			case 'a':
+				int o;
+				while ( command_line [p] == ' ' ) {p++;}
+				if ( command_line [p] == '\0' ) {
+					   o = 0;
+				} else {
+					while ( '0' <= command_line [p] && command_line [p] <= '9' ) {
+						   o = 10*o + command_line [p] - '0';
+						   p++;
+					}
+				}
+				cin.getline ( type, CAPACITY );
+				q = 0;
+				while ( type [q] != '\r' ) {
+					cerr << type [q] << endl;
+				     T.insert_line (o);
+					q++;
+				}
+				break;
+				
+			// Display lines M through N on the screen
+			// Usage: t M N
+			case 't':
+				int m, n;
+				m = 0;
+				n = 0;
+				while ( command_line [p] == ' ' ) {p++;}
+				if ( command_line [p] == '\0' ) {
+					m = 0;
+					n = T.get_last_line();
+				} else {
+					while ('0' <= command_line[p] && command_line[p] <='9') {
+					  m = 10*m + command_line[p] - '0';
+					  p++;
+					}
+				    while ( command_line [p] == ' ' ) { p++; }
+					while ('0' <= command_line[p] && command_line[p] <= '9') {
+					  n = 10*n + command_line[p] - '0';
+					  p++;
+					}
+					
+					}
+				T.display_file(m, n);
+				break;
+				
+			// Delete lines M through N
+			// Will delete only M if not specified N
+			// Usage: d M N
+			case 'd':
+				break;
+				
+			// Move lines M through N to location after line L
+			// Usage: m M N L
+			case 'm':
+				
+				break;
+				
+			// COPY lines M through N to location after line L
+			// Usage: c M N L
+			case 'c':
+				
+				break;
+				
+			// Display each line between M and N on which 'word' appears
+			// Usage: f M N /word/
+			case 'f':
+				
+				break;
+				
+			// Substitute string 'new' for the first occurrence of string 'old' on each of
+			// lines M through N.
+			// Usage: s M N /old/new/
+			case 's':
+				
+				break;
+				
+			default:
+				cerr << "Invalid command.  Type 'h' to view the list of commands." << endl << endl;
+				break;
+		}
+	}
+}

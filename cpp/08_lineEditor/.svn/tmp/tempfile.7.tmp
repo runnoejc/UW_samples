@@ -1,0 +1,124 @@
+// Matt Pearson & Jessie Runnoe
+// Assignment 8 - Line Editor
+
+#include <iostream>
+#include <fstream>
+#include "text_class.h"
+
+using namespace std;
+string garbage;
+
+#define COMMAND_CAPACITY 100
+#define COMMAND_PROMPT "|-->  "
+
+void display_help() {
+	cerr << endl << "== AVAILABLE COMMANDS ==" << endl << endl
+		<< " h -- Shows this screen." << endl
+		<< " g -- Opens a file." << endl
+		<< "      Usage:  g <filename> -- Filename is required." << endl
+		<< " n -- Toggles line-numbering" << endl
+		<< " q -- Exit program without saving." << endl
+		<< " x -- Save current file and exit program." << endl
+		<< "       Usage:  x <filename> -- Filename is optional." << endl
+		<< " p -- Save file." << endl
+		<< "       Usage: p <filename> -- Filename is optional." << endl
+		<< " a -- Add lines after line 'N'." << endl
+		<< "       Usage: a N" << endl
+		<< " t -- Display lines M through N." << endl
+		<< "       Usage: t M N" << endl
+		<< " d -- Delete lines M through N." << endl
+		<< "       Usage: d M N -- Only line M will be deleted if N is unspecified." << endl
+		<< " m -- Move lines M through N to directly after line L." << endl
+		<< "       Usage: m M N L" << endl
+		<< " c -- Copy lines M through N to location directly after line L." << endl
+		<< "       Usage: c M N L" << endl
+		<< " f -- Display each line between M and N on which 'word' appears." << endl
+		<< "       Usage: f M N /word/" << endl
+		<< " s -- Substitute string 'new' for the first occurrence of string 'old' on each of lines M through N." << endl
+		<< "       Usage: s M N /old/new/" << endl
+		<< endl;
+	return;
+}
+
+main () {/
+	text_ed T;	
+	char command_line [COMMAND_CAPACITY], command;
+	
+	while (command != 'q') {
+		cerr << COMMAND_PROMPT;
+		cin.getline(command_line,COMMAND_CAPACITY);
+		
+		// Skip unneeded spaces
+		int p=0;
+		while (command_line[p]==' ') { p++; }
+		command = command_line [p]; p++;
+		
+		switch (command) {
+			case 'h':
+				display_help();
+				break;
+			// Get a file
+			// Usage: g <filename-required>
+			case 'g':
+				char **argv;				// This isn't working yet.
+				cerr << "Didn't get anywhere" << endl;
+				T.load_file (argv [1]);
+				cerr << "Got this far" << endl;
+				break;
+			case 'n':		// Toggle line-numbering
+				
+				break;
+			case 'q':		// Quit without saving
+				cerr << endl << "Program has quit.  You did not save your changes." << endl;
+				return 0;
+			// Save file and exit
+			// Usage: x <filename-optional>
+			case 'x':
+				
+				break;
+			// Save file (a.k.a put current buffer to file)
+			// Usage: p <filename-optional>
+			case 'p':
+				
+				break;
+			// Add lines after line N
+			// Usage: a N
+			case 'a':
+				
+				break;
+			// Display lines M through N on the screen
+			// Usage: t M N
+			case 't':
+				break;
+			// Delete lines M through N
+			// Will delete only M if not specified N
+			// Usage: d M N
+			case 'd':
+				break;
+			// Move lines M through N to location after line L
+			// Usage: m M N L
+			case 'm':
+				
+				break;
+			// COPY lines M through N to location after line L
+			// Usage: c M N L
+			case 'c':
+				
+				break;
+			// Display each line between M and N on which 'word' appears
+			// Usage: f M N /word/
+			case 'f':
+				
+				break;
+			// Substitute string 'new' for the first occurrence of string 'old' on each of
+			// lines M through N.
+			// Usage: s M N /old/new/
+			case 's':
+				
+				break;
+			default:
+				cerr << "Invalid command.  Type 'h' to view the list of commands." << endl << endl;
+				break;
+		}
+	}
+}
