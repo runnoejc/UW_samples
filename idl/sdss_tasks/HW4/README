@@ -1,0 +1,16 @@
+###########
+#   HW 4  #
+###########
+
+;Sunday 3/3/13
+HW 4 is complete and includes the following files:
+
+hw4.pro          - wrapper that also treats the object FUV1
+make_mask.pro    - takes input RA and dec and makes survey mask
+get_FIRST.pro    - finds FIRST objects in the mask
+get_fluxes.pro   - matches FIRST to SDSS and gets data 
+
+Auxiliary files:
+hw4_survey.png   - plot of the objects with the survey footprint and objects in the survey highlighted.
+hw4_SED.png	 - SED of FUV1
+FIRST_data.fits  - coordinates for FIRST objects

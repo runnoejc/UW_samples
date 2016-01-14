@@ -1,0 +1,16 @@
+###########
+#   HW 1  #
+###########
+
+;Friday, 2/1/13
+HW 1 is complete and includes the following files:
+
+hw1_planets.pro      - completes problems 1 and 2 of the assignment
+hw1_planets.png      - plot from problem 1 of the assignment (ecliptic coordinates)
+hw1_celesplanets.png - plot from problem 2 of the assignment (RA and dec)
+
+hw1_quasars.pro      - completes problem 3 of the assignment
+hw1_quasars.png      - plot of Galactic coordinates for problem 3 of the assignment
+hw1_quasarhist.png   - histogram of b from problem 3 of the assignment, also plotted to the screen
+
+hw1_obsq.pro         - completes problem 4 of the assignment 
