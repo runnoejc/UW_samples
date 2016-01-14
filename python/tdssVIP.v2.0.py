@@ -614,11 +614,10 @@ if len(sys.argv) == 3: # run the whole plate
     # read in the TDSS plate
     sdss = pyfits.open('fes_sdss_matched.fits')
     plate = str(sys.argv[1]); mjd = str(sys.argv[2])
-    #platefile = urllib.urlretrieve('http://data.sdss.org/sas/ebosswork/eboss/spectro/redux/v5_7_9/'+plate+'/spPlate-'+plate+'-'+mjd+'.fits')
+    platefile = urllib.urlretrieve('http://data.sdss.org/sas/ebosswork/eboss/spectro/redux/v5_7_9/'+plate+'/spPlate-'+plate+'-'+mjd+'.fits')
     #platefile = './data.sdss.org/sas/ebosswork/eboss/spectro/redux/v5_7_9/'+plate+'/spPlate-'+plate+'-'+mjd+'.fits'
     #platefile = urllib.urlretrieve('spPlate-'+plate+'-'+mjd+'.fits')
-    platefile = 'spPlate-'+plate+'-'+mjd+'.fits'
-    print platefile
+    #platefile = 'spPlate-'+plate+'-'+mjd+'.fits'
     platefile = pyfits.open(platefile)
     #spZbestfile = urllib.urlretrieve('http://data.sdss.org/sas/ebosswork/eboss/spectro/redux/v5_7_9/'+plate+'/v5_7_6/spZbest-'+plate+'-'+mjd+'.fits')
     #spZbestfile = './data.sdss.org/sas/ebosswork/eboss/spectro/redux/v5_7_9/'+plate+'/v5_7_9/'+'spZbest-'+plate+'-'+mjd+'.fits'
