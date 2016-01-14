@@ -1,0 +1,13 @@
+###########
+#   HW 0  #
+###########
+
+;Friday, 1/25/13
+HW 0 is complete and includes the following files:
+
+line_gen.pro    - generates synthetic data
+line_fit.pro    - uses MPFIT to fit a line to data
+line_mod.pro    - linear model called by line_fit.pro
+plotscrn.pro    - plots to the screen
+plotps.pro      - plots to hw0.png
+master_line.pro - wrapper for all of the above

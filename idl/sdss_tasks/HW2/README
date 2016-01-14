@@ -1,0 +1,15 @@
+###########
+#   HW 2  #
+###########
+
+;Friday, 2/8/13
+HW 2 is complete and includes the following files:
+
+hw2a.pro             - completes the firt problem in the assignment, uses coords.tab which contains the input coordinates for 4 lunes, creates lunes.png
+hw2b.pro             - completes the second problem in the assignment, creates populated_lune.png
+pixelate.pro         - completes the third problem in the assignment, creates pixnums.fits
+hw2c.pro             - completes the fourth problem in the assignment, creates overdensity.png
+
+Auxiliary procedures and functions:
+get_area.pro         - calculates the area of a lune, returns a polygon structure of the lune including the area
+get_mode.pro         - calculates the mode of an input data array 

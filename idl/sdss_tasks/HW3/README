@@ -1,0 +1,15 @@
+###########
+#   HW 3  #
+###########
+
+;Thursday, 2/14/13
+HW 3 is complete and includes the following files:
+
+hw3.pro          - completes all of homework 3 and creates hw3_survey.png and survey_mask.fits. 
+
+Auxiliary files:
+hw3_survey.png   - plot of the quasars with the survey footprint and quasars in the survey highlighted.
+survey_mask.fits - fits file with the polygons defining the survey footprint.
+
+# 2/27/13
+Fixed issue of overlapping spectral plates for area calculation
