@@ -1,0 +1,12 @@
+------------------------------ 
+# Fiber 
+# RA [deg] 
+# Dec [deg] 
+# z 
+# eboss_target0_bit 
+# class_pipeline 
+# class_VI 
+# subclass_pipeline 
+# comment [nc = no comment] 
+------------------------------ 
+009 	 140.22605 	 54.664184 	 0.000099 	 1073741824 	                STAR 	          K0V(10780) 	Test.
